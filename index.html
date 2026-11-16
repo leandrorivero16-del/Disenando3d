@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseñando 3D | Ideas que se vuelven realidad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F5F1EB;
+      color: #2C221E;
+    }
+    .font-logo {
+      font-family: 'Caveat', cursive;
+    }
+    .hero-bg {
+      background: linear-gradient(180deg, rgba(24,18,15,0.78) 0%, rgba(36,24,18,0.88) 100%),
+                  url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="pb-16">
+
+  <!-- PORTADA OSCURA CON LUCES -->
+  <header class="hero-bg text-white pt-4 pb-10 px-4 rounded-b-[28px] shadow-lg relative overflow-hidden">
+    <nav class="max-w-3xl mx-auto flex items-center justify-between mb-6">
+      <div class="flex items-center gap-1.5">
+        <span class="font-logo text-3xl text-white tracking-wide">Diseñando</span>
+        <span class="text-amber-300 text-xl">💡</span>
+      </div>
+      <a href="https://wa.me/5491134830827?text=Hola%20Dise%C3%B1ando%203D!%20Quiero%20hacerte%20una%20consulta." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3.5 py-2 rounded-full flex items-center gap-1.5 shadow transition">
+        <span>WhatsApp</span>
+      </a>
+    </nav>
+
+    <div class="max-w-3xl mx-auto text-center sm:text-left sm:flex sm:items-center sm:justify-between gap-6">
+      <div class="space-y-3">
+        <span class="inline-block bg-amber-400/20 border border-amber-300/40 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
+          Impresión 3D a medida · Burzaco
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+          Ideas que se vuelven realidad
+        </h1>
+        <p class="text-sm text-stone-200 max-w-md mx-auto sm:mx-0">
+          Diseños únicos, personalizados y con terminación artesanal. Elegí tu modelo y color favorito.
+        </p>
+        <div class="pt-1">
+          <a href="#catalogo" class="inline-block bg-amber-400 hover:bg-amber-300 text-stone-900 font-bold text-sm px-5 py-2.5 rounded-full shadow-md transition">
+            Ver catálogo completo ↓
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BARRA DISCRETA DE CATEGORÍAS -->
+  <section id="catalogo" class="max-w-3xl mx-auto px-3 pt-5">
+    <div class="flex items-center justify-between mb-3 px-1">
+      <h2 class="text-base font-extrabold text-stone-800">Catálogo disponible</h2>
+      <span class="text-xs text-stone-500 font-medium">Tocá un producto para ver detalles</span>
+    </div>
+
+    <div class="flex gap-2 overflow-x-auto no-scrollbar pb-3">
+      <button onclick="filtrarCategoria('Todos')" class="cat-btn active bg-stone-800 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+        Todos
+      </button>
+      <button onclick="filtrarCategoria('Navidad')" class="cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition">
+        🎄 Navidad
+      </button>
+      <button onclick="filtrarCategoria('Hogar')" class="cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition">
+        🕯️ Hogar y Deco
+      </button>
+    </div>
+
+    <!-- GRILLA DE 2 COLUMNAS ESTILO MERCADO LIBRE -->
+    <div id="grid-productos" class="grid grid-cols-2 gap-3 mt-1">
+      <!-- Se llena automáticamente con JavaScript -->
+    </div>
+  </section>
+
+  <!-- BANNER INFERIOR PEDIDOS PERSONALIZADOS -->
+  <section class="max-w-3xl mx-auto px-3 mt-8">
+    <div class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 rounded-2xl p-5 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <h3 class="font-extrabold text-base">¿Tenés otra idea o buscás otro color?</h3>
+        <p class="text-xs text-white/90 mt-0.5">Hacemos diseños personalizados a pedido en el color que quieras.</p>
+      </div>
+      <a href="https://wa.me/5491134830827?text=Hola!%20Tengo%20una%20idea%20para%20imprimir%20en%203D..." target="_blank" class="bg-white text-stone-900 font-bold text-xs px-4 py-2.5 rounded-full shadow hover:bg-stone-100 whitespace-nowrap transition">
+        Escribinos por WhatsApp →
+      </a>
+    </div>
+  </section>
+
+  <!-- MODAL DETALLE DE ARTÍCULO (ESTILO APP MERCADO LIBRE) -->
+  <div id="modal-producto" class="fixed inset-0 bg-black/60 z-50 hidden items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs">
+    <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl max-h-[92vh] overflow-y-auto shadow-2xl animate-slide-up">
+      <!-- Cabecera Modal -->
+      <div class="sticky top-0 bg-white/95 backdrop-blur px-4 py-3 border-b border-stone-100 flex items-center justify-between z-10">
+        <span id="modal-cat" class="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">Navidad</span>
+        <button onclick="cerrarModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-600 font-bold">✕</button>
+      </div>
+
+      <!-- Imagen Principal -->
+      <div class="p-4">
+        <div class="aspect-square w-full rounded-2xl overflow-hidden bg-stone-100 border border-stone-100">
+          <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Miniaturas (si tiene más de 1 foto) -->
+        <div id="modal-thumbs" class="flex gap-2 mt-3"></div>
+
+        <!-- Título y Precio -->
+        <div class="mt-4">
+          <h3 id="modal-titulo" class="text-xl font-extrabold text-stone-900 leading-snug"></h3>
+          <div class="flex items-baseline gap-2 mt-1.5">
+            <span id="modal-precio" class="text-2xl font-extrabold text-stone-900"></span>
+            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">A pedido · Burzaco</span>
+          </div>
+          <p id="modal-desc" class="text-sm text-stone-600 mt-3 leading-relaxed"></p>
+        </div>
+
+        <!-- Selector de Color -->
+        <div class="mt-5 pt-4 border-t border-stone-100">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-stone-700">Color elegido: <strong id="color-seleccionado-texto" class="text-amber-700"></strong></span>
+            <span class="text-[11px] text-stone-400">Consultá por otros tonos</span>
+          </div>
+          <div id="modal-colores" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Botón de Compra Directa a WhatsApp -->
+        <div class="mt-6 pb-2">
+          <a id="btn-whatsapp-pedido" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-5 rounded-2xl shadow-lg flex items-center justify-center gap-2 text-sm transition">
+            <span>Encargar por WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const TELEFONO_WA = "5491134830827";
+
+    const PALETA_COMPLETA = [
+      { nombre: "Blanco", hex: "#FFFFFF", borde: true },
+      { nombre: "Negro", hex: "#1F1F1F" },
+      { nombre: "Azul", hex: "#1D4ED8" },
+      { nombre: "Rosa", hex: "#F472B6" },
+      { nombre: "Marrón", hex: "#78350F" },
+      { nombre: "Dorado", hex: "#D97706" },
+      { nombre: "Aqua", hex: "#2DD4BF" },
+      { nombre: "Amarillo", hex: "#FACC15" },
+      { nombre: "Otro color (Consultar)", hex: "linear-gradient(135deg, #ec4899, #eab308, #3b82f6)" }
+    ];
+
+    const PRODUCTOS = [
+      {
+        id: 1,
+        categoria: "Navidad",
+        titulo: "Árbol de Navidad con Pelitos (8 cm)",
+        precio: "$ 10.000",
+        medidas: "8 cm de alto",
+        descripcion: "Arbolito navideño decorativo con textura de pelitos suaves en relieve. Ideal para escritorios, repisas o sumar un detalle cálido en estas fiestas.",
+        imagenes: ["Img_2026_11_11_10_10_22.jpeg"],
+        colores: PALETA_COMPLETA
+      },
+      {
+        id: 2,
+        categoria: "Navidad",
+        titulo: "Árbol de Navidad Azul y Oro (13 cm)",
+        precio: "$ 13.000",
+        medidas: "13 cm de alto",
+        descripcion: "Diseño exclusivo estilo tejido al crochet en combinación azul brillante y dorado con estrella en la punta. Terminación premium.",
+        imagenes: ["PXL_20261113_003103794~2.jpg"],
+        colores: [
+          { nombre: "Azul y Oro (Como la foto)", hex: "#1E40AF" },
+          ...PALETA_COMPLETA
+        ]
+      },
+      {
+        id: 3,
+        categoria: "Hogar",
+        titulo: "Árbol de Navidad Porta Vela (17 cm)",
+        precio: "$ 12.000",
+        medidas: "17 cm de alto",
+        descripcion: "Árbol navideño calado con espacio interior para vela LED. Ilumina y decora cualquier rincón con una luz cálida espectacular. Disponible en múltiples colores.",
+        imagenes: ["PXL_20261115_010208660.jpg"],
+        colores: PALETA_COMPLETA
+      }
+    ];
+
+    let productoActual = null;
+    let colorActual = "";
+
+    function renderProductos(filtro = "Todos") {
+      const grid = document.getElementById("grid-productos");
+      grid.innerHTML = "";
+
+      const lista = filtro === "Todos"
+        ? PRODUCTOS
+        : PRODUCTOS.filter(p => p.categoria === filtro);
+
+      lista.forEach(prod => {
+        const card = document.createElement("div");
+        card.onclick = () => abrirModal(prod);
+        card.className = "bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200/80 flex flex-col cursor-pointer active:scale-[0.98] transition";
+
+        card.innerHTML = `
+          <div class="aspect-square w-full bg-stone-100 overflow-hidden">
+            <img src="${prod.imagenes[0]}" alt="${prod.titulo}" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-3 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold uppercase text-amber-700">${prod.categoria}</span>
+              <h3 class="text-xs font-bold text-stone-800 line-clamp-2 mt-0.5 leading-snug">${prod.titulo}</h3>
+            </div>
+            <div class="mt-2.5">
+              <p class="text-base font-extrabold text-stone-900">${prod.precio}</p>
+              <p class="text-[11px] text-emerald-600 font-semibold mt-0.5">Varios colores · Ver más</p>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filtrarCategoria(cat) {
+      document.querySelectorAll(".cat-btn").forEach(btn => {
+        if (btn.textContent.includes(cat) || (cat === "Todos" && btn.textContent.trim() === "Todos")) {
+          btn.className = "cat-btn active bg-stone-800 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition";
+        } else {
+          btn.className = "cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition";
+        }
+      });
+      renderProductos(cat);
+    }
+
+    function abrirModal(prod) {
+      productoActual = prod;
+      colorActual = prod.colores[0].nombre;
+
+      document.getElementById("modal-cat").textContent = prod.categoria;
+      document.getElementById("modal-img").src = prod.imagenes[0];
+      document.getElementById("modal-titulo").textContent = prod.titulo;
+      document.getElementById("modal-precio").textContent = prod.precio;
+      document.getElementById("modal-desc").textContent = prod.descripcion;
+
+      const thumbs = document.getElementById("modal-thumbs");
+      thumbs.innerHTML = "";
+      if (prod.imagenes.length > 1) {
+        prod.imagenes.forEach((imgUrl, idx) => {
+          const t = document.createElement("img");
+          t.src = imgUrl;
+          t.className = "w-14 h-14 rounded-xl object-cover border-2 cursor-pointer " + (idx === 0 ? "border-amber-500" : "border-stone-200");
+          t.onclick = () => {
+            document.getElementById("modal-img").src = imgUrl;
+          };
+          thumbs.appendChild(t);
+        });
+      }
+
+      renderColoresModal();
+      actualizarLinkWhatsApp();
+
+      const modal = document.getElementById("modal-producto");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function renderColoresModal() {
+      const cont = document.getElementById("modal-colores");
+      cont.innerHTML = "";
+      document.getElementById("color-seleccionado-texto").textContent = colorActual;
+
+      productoActual.colores.forEach(c => {
+        const btn = document.createElement("button");
+        const activo = c.nombre === colorActual;
+        btn.type = "button";
+        btn.onclick = () => {
+          colorActual = c.nombre;
+          renderColoresModal();
+          actualizarLinkWhatsApp();
+        };
+        btn.className = `flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition ${
+          activo ? "border-amber-600 bg-amber-50 text-amber-900 ring-1 ring-amber-500" : "border-stone-200 bg-white text-stone-700"
+        }`;
+
+        const circuloStyle = c.hex.startsWith("linear")
+          ? `background: ${c.hex};`
+          : `background-color: ${c.hex};`;
+
+        btn.innerHTML = `
+          <span class="w-3.5 h-3.5 rounded-full inline-block ${c.borde ? 'border border-stone-300' : ''}" style="${circuloStyle}"></span>
+          <span>${c.nombre}</span>
+        `;
+        cont.appendChild(btn);
+      });
+    }
+
+    function actualizarLinkWhatsApp() {
+      const texto = `Hola Diseñando 3D! Me interesa encargar:\n• *Producto:* ${productoActual.titulo}\n• *Precio:* ${productoActual.precio}\n• *Color:* ${colorActual}`;
+      const url = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(texto)}`;
+      document.getElementById("btn-whatsapp-pedido").href = url;
+    }
+
+    function cerrarModal() {
+      const modal = document.getElementById("modal-producto");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    renderProductos();
+  </script>
+</body>
+</html>
