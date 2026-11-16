@@ -73,11 +73,11 @@
       <button onclick="filtrarCategoria('Todos')" class="cat-btn active bg-stone-800 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
         Todos
       </button>
+      <button onclick="filtrarCategoria('Hogar')" class="cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition">
+        🕯️ Hogar y Sahumerios
+      </button>
       <button onclick="filtrarCategoria('Navidad')" class="cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition">
         🎄 Navidad
-      </button>
-      <button onclick="filtrarCategoria('Hogar')" class="cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition">
-        🕯️ Hogar y Deco
       </button>
     </div>
 
@@ -102,10 +102,10 @@
 
   <!-- MODAL DETALLE DE ARTÍCULO (ESTILO APP MERCADO LIBRE) -->
   <div id="modal-producto" class="fixed inset-0 bg-black/60 z-50 hidden items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs">
-    <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl max-h-[92vh] overflow-y-auto shadow-2xl animate-slide-up">
+    <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl max-h-[92vh] overflow-y-auto shadow-2xl">
       <!-- Cabecera Modal -->
       <div class="sticky top-0 bg-white/95 backdrop-blur px-4 py-3 border-b border-stone-100 flex items-center justify-between z-10">
-        <span id="modal-cat" class="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">Navidad</span>
+        <span id="modal-cat" class="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">Hogar</span>
         <button onclick="cerrarModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-600 font-bold">✕</button>
       </div>
 
@@ -115,7 +115,7 @@
           <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
         </div>
 
-        <!-- Miniaturas (si tiene más de 1 foto) -->
+        <!-- Miniaturas (para alternar entre foto estudio y ambientada) -->
         <div id="modal-thumbs" class="flex gap-2 mt-3"></div>
 
         <!-- Título y Precio -->
@@ -165,6 +165,16 @@
     const PRODUCTOS = [
       {
         id: 1,
+        categoria: "Hogar",
+        titulo: "Porta Sahumerio Corazón (23 cm)",
+        precio: "$ 9.500",
+        medidas: "23 cm de largo",
+        descripcion: "Diseño romántico en forma de corazón entrelazado con soporte para varilla y bandeja alargada para cenizas. Ideal para regalar o decorar.",
+        imagenes: ["1794865057270.jpg", "1794865075187.jpg"],
+        colores: PALETA_COMPLETA
+      },
+      {
+        id: 2,
         categoria: "Navidad",
         titulo: "Árbol de Navidad con Pelitos (8 cm)",
         precio: "$ 10.000",
@@ -174,7 +184,7 @@
         colores: PALETA_COMPLETA
       },
       {
-        id: 2,
+        id: 3,
         categoria: "Navidad",
         titulo: "Árbol de Navidad Azul y Oro (13 cm)",
         precio: "$ 13.000",
@@ -187,8 +197,8 @@
         ]
       },
       {
-        id: 3,
-        categoria: "Hogar",
+        id: 4,
+        categoria: "Navidad",
         titulo: "Árbol de Navidad Porta Vela (17 cm)",
         precio: "$ 12.000",
         medidas: "17 cm de alto",
@@ -263,6 +273,8 @@
           t.className = "w-14 h-14 rounded-xl object-cover border-2 cursor-pointer " + (idx === 0 ? "border-amber-500" : "border-stone-200");
           t.onclick = () => {
             document.getElementById("modal-img").src = imgUrl;
+            Array.from(thumbs.children).forEach(el => el.classList.replace("border-amber-500", "border-stone-200"));
+            t.classList.replace("border-stone-200", "border-amber-500");
           };
           thumbs.appendChild(t);
         });
