@@ -6,19 +6,30 @@
   <title>Ninuski 3d | Ideas que se vuelven realidad</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #F5F1EB;
-      color: #2C221E;
+      background-color: #F4F5F8;
+      color: #1E222B;
     }
-    .font-logo {
-      font-family: 'Caveat', cursive;
+    .font-brand {
+      font-family: 'Outfit', sans-serif;
     }
-    .hero-bg {
-      background: linear-gradient(180deg, rgba(24,18,15,0.78) 0%, rgba(36,24,18,0.88) 100%),
-                  url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    .hero-tech {
+      background-color: #0B0F19;
+      background-image:
+        radial-gradient(circle at 18% 20%, rgba(56, 189, 248, 0.28) 0%, transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 50% 100%, rgba(245, 158, 11, 0.20) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+    }
+    .brand-gradient {
+      background: linear-gradient(95deg, #FFFFFF 15%, #38BDF8 55%, #C084FC 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -31,98 +42,111 @@
 </head>
 <body class="pb-16">
 
-  <!-- PORTADA OSCURA CON LUCES -->
-  <header class="hero-bg text-white pt-4 pb-10 px-4 rounded-b-[28px] shadow-lg relative overflow-hidden">
+  <!-- PORTADA TECNOLÓGICA CON MARCA PROTAGONISTA -->
+  <header class="hero-tech text-white pt-5 pb-11 px-4 rounded-b-[32px] shadow-xl relative overflow-hidden border-b border-sky-500/20">
     <nav class="max-w-3xl mx-auto flex items-center justify-between mb-6">
-      <div class="flex items-center gap-1.5">
-        <span class="font-logo text-3xl text-white tracking-wide">Ninuski 3d</span>
-        <span class="text-amber-300 text-xl">💡</span>
-      </div>
-      <a href="https://wa.me/5491134830827?text=Hola%20Ninuski%203d!%20Quiero%20hacerte%20una%20consulta." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3.5 py-2 rounded-full flex items-center gap-1.5 shadow transition">
+      <span class="inline-flex items-center gap-1.5 bg-sky-500/15 border border-sky-400/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        Impresión 3D · Diseño Digital
+      </span>
+      <a href="https://wa.me/5491134830827?text=Hola%20Ninuski%203d!%20Quiero%20hacerte%20una%20consulta." target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-lg shadow-emerald-500/25 transition">
         <span>WhatsApp</span>
       </a>
     </nav>
 
-    <div class="max-w-3xl mx-auto text-center sm:text-left sm:flex sm:items-center sm:justify-between gap-6">
-      <div class="space-y-3">
-        <span class="inline-block bg-amber-400/20 border border-amber-300/40 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
-          Impresión 3D a medida
-        </span>
-        <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight">
-          Ideas que se vuelven realidad
-        </h1>
-        <p class="text-sm text-stone-200 max-w-md mx-auto sm:mx-0">
-          Diseños únicos, personalizados y con terminación artesanal. Elegí tu modelo y color favorito.
-        </p>
-        <div class="pt-1">
-          <a href="#catalogo" class="inline-block bg-amber-400 hover:bg-amber-300 text-stone-900 font-bold text-sm px-5 py-2.5 rounded-full shadow-md transition">
-            Ver catálogo completo ↓
-          </a>
+    <div class="max-w-3xl mx-auto text-center sm:text-left">
+      <div class="inline-flex items-center gap-3 mb-2">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-sky-400 via-indigo-500 to-purple-600 p-[2px] shadow-lg shadow-sky-500/20">
+          <div class="w-full h-full bg-slate-950/90 rounded-[14px] flex items-center justify-center">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
         </div>
+        <h1 class="font-brand text-5xl sm:text-6xl font-black tracking-tight brand-gradient drop-shadow-sm">
+          Ninuski 3d
+        </h1>
+      </div>
+
+      <p class="text-lg sm:text-xl font-bold text-white/95 mt-1">
+        Ideas que se vuelven realidad
+      </p>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto sm:mx-0 mt-1.5 leading-relaxed">
+        Piezas únicas fabricadas capa por capa con precisión y terminación artesanal. Elegí tu diseño y color favorito.
+      </p>
+
+      <div class="pt-4">
+        <a href="#catalogo" class="inline-flex items-center gap-2 bg-gradient-to-r from-sky-400 to-indigo-500 hover:from-sky-300 hover:to-indigo-400 text-slate-950 font-extrabold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-sky-500/25 transition">
+          <span>Explorar catálogo</span>
+          <span>↓</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- BARRA DISCRETA DE CATEGORÍAS -->
-  <section id="catalogo" class="max-w-3xl mx-auto px-3 pt-5">
+  <!-- BARRA DE CATEGORÍAS -->
+  <section id="catalogo" class="max-w-3xl mx-auto px-3 pt-6">
     <div class="flex items-center justify-between mb-3 px-1">
-      <h2 class="text-base font-extrabold text-stone-800">Catálogo disponible</h2>
-      <span class="text-xs text-stone-500 font-medium">Tocá un producto para ver detalles</span>
+      <h2 class="text-base font-extrabold text-slate-900">Catálogo disponible</h2>
+      <span class="text-xs text-slate-500 font-medium">Tocá un artículo para ver detalles</span>
     </div>
 
     <div id="barra-categorias" class="flex gap-2 overflow-x-auto no-scrollbar pb-3">
-      <button onclick="filtrarCategoria('Todos')" class="cat-btn active bg-stone-800 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+      <button onclick="filtrarCategoria('Todos')" class="cat-btn active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
         Todos
       </button>
     </div>
 
-    <!-- GRILLA DE 2 COLUMNAS ESTILO MERCADO LIBRE -->
+    <!-- GRILLA DE PRODUCTOS -->
     <div id="grid-productos" class="grid grid-cols-2 gap-3 mt-1">
-      <div class="col-span-2 text-center py-10 text-sm text-stone-500">Cargando catálogo...</div>
+      <div class="col-span-2 text-center py-10 text-sm text-slate-500">Cargando catálogo...</div>
     </div>
   </section>
 
   <!-- BANNER INFERIOR PEDIDOS PERSONALIZADOS -->
   <section class="max-w-3xl mx-auto px-3 mt-8">
-    <div class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 rounded-2xl p-5 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+    <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 border border-indigo-500/30 rounded-2xl p-5 text-white shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div>
-        <h3 class="font-extrabold text-base">¿Tenés otra idea o buscás otro color?</h3>
-        <p class="text-xs text-white/90 mt-0.5">Hacemos diseños personalizados a pedido en el color que quieras.</p>
+        <h3 class="font-extrabold text-base text-sky-300">¿Tenés otra idea o buscás otro color?</h3>
+        <p class="text-xs text-slate-200 mt-0.5">Fabricamos diseños personalizados a pedido en el color que quieras.</p>
       </div>
-      <a href="https://wa.me/5491134830827?text=Hola%20Ninuski%203d!%20Tengo%20una%20idea%20para%20imprimir%20en%203D..." target="_blank" class="bg-white text-stone-900 font-bold text-xs px-4 py-2.5 rounded-full shadow hover:bg-stone-100 whitespace-nowrap transition">
+      <a href="https://wa.me/5491134830827?text=Hola%20Ninuski%203d!%20Tengo%20una%20idea%20para%20imprimir%20en%203D..." target="_blank" class="bg-sky-400 hover:bg-sky-300 text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-full shadow whitespace-nowrap transition">
         Escribinos por WhatsApp →
       </a>
     </div>
   </section>
 
   <!-- MODAL DETALLE DE ARTÍCULO -->
-  <div id="modal-producto" class="fixed inset-0 bg-black/60 z-50 hidden items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs">
+  <div id="modal-producto" class="fixed inset-0 bg-black/65 z-50 hidden items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs">
     <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl max-h-[92vh] overflow-y-auto shadow-2xl">
-      <div class="sticky top-0 bg-white/95 backdrop-blur px-4 py-3 border-b border-stone-100 flex items-center justify-between z-10">
-        <span id="modal-cat" class="text-[11px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">Hogar</span>
-        <button onclick="cerrarModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-600 font-bold">✕</button>
+      <div class="sticky top-0 bg-white/95 backdrop-blur px-4 py-3 border-b border-slate-100 flex items-center justify-between z-10">
+        <span id="modal-cat" class="text-[11px] font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full">Hogar</span>
+        <button onclick="cerrarModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 font-bold">✕</button>
       </div>
 
       <div class="p-4">
-        <div class="aspect-square w-full rounded-2xl overflow-hidden bg-stone-100 border border-stone-100">
+        <div class="aspect-square w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
           <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
         </div>
 
         <div id="modal-thumbs" class="flex gap-2 mt-3"></div>
 
         <div class="mt-4">
-          <h3 id="modal-titulo" class="text-xl font-extrabold text-stone-900 leading-snug"></h3>
-          <div class="flex items-baseline gap-2 mt-1.5">
-            <span id="modal-precio" class="text-2xl font-extrabold text-stone-900"></span>
-            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">A pedido</span>
+          <h3 id="modal-titulo" class="text-xl font-extrabold text-slate-900 leading-snug"></h3>
+          <div class="flex flex-wrap items-center gap-2 mt-2">
+            <span id="modal-precio" class="text-2xl font-extrabold text-slate-900"></span>
+            <span id="modal-medidas-badge" class="hidden text-xs font-bold text-sky-800 bg-sky-100 px-2.5 py-1 rounded-lg"></span>
+            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-lg">A pedido</span>
           </div>
-          <p id="modal-desc" class="text-sm text-stone-600 mt-3 leading-relaxed"></p>
+          <p id="modal-desc" class="text-sm text-slate-600 mt-3 leading-relaxed"></p>
         </div>
 
-        <div class="mt-5 pt-4 border-t border-stone-100">
+        <div class="mt-5 pt-4 border-t border-slate-100">
           <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold text-stone-700">Color elegido: <strong id="color-seleccionado-texto" class="text-amber-700"></strong></span>
-            <span class="text-[11px] text-stone-400">Consultá por otros tonos</span>
+            <span class="text-xs font-bold text-slate-700">Color elegido: <strong id="color-seleccionado-texto" class="text-indigo-700"></strong></span>
+            <span class="text-[11px] text-slate-400">Consultá por otros tonos</span>
           </div>
           <div id="modal-colores" class="flex flex-wrap gap-2"></div>
         </div>
@@ -158,6 +182,7 @@
         categoria: "Hogar",
         titulo: "Porta Sahumerio Corazón (23 cm)",
         precio: "$ 9.500",
+        medidas: "23 cm de largo",
         descripcion: "Diseño romántico en forma de corazón entrelazado con soporte para varilla y bandeja alargada para cenizas. Ideal para regalar o decorar.",
         imagenes: ["1794865057270.jpg", "1794865075187.jpg"],
         colores: PALETA_COMPLETA
@@ -168,6 +193,17 @@
     let productoActual = null;
     let colorActual = "";
 
+    function obtenerCampo(fila, posiblesNombres) {
+      const claves = Object.keys(fila);
+      for (const nombre of posiblesNombres) {
+        const encontrada = claves.find(k => k.trim().toLowerCase() === nombre.toLowerCase());
+        if (encontrada && fila[encontrada] !== undefined) {
+          return String(fila[encontrada]).trim();
+        }
+      }
+      return "";
+    }
+
     function cargarDesdeSheets() {
       Papa.parse(SHEET_CSV_URL, {
         download: true,
@@ -176,25 +212,29 @@
         complete: function(results) {
           const filas = results.data || [];
           const cargados = filas
-            .filter(f => (f.Activo || "SI").trim().toUpperCase() !== "NO" && (f.Titulo || "").trim() !== "")
+            .filter(f => {
+              const activo = obtenerCampo(f, ["Activo"]) || "SI";
+              const titulo = obtenerCampo(f, ["Titulo", "Título"]);
+              return activo.toUpperCase() !== "NO" && titulo !== "";
+            })
             .map((f, idx) => {
-              const imgs = (f.Imagenes || "")
+              const imgs = obtenerCampo(f, ["Imagenes", "Imágenes", "Imagen"])
                 .split(",")
                 .map(s => s.trim())
                 .filter(Boolean);
 
-              const titulo = (f.Titulo || "").trim();
+              const titulo = obtenerCampo(f, ["Titulo", "Título"]);
               const coloresBase = titulo.toLowerCase().includes("azul y oro")
                 ? [{ nombre: "Azul y Oro (Como la foto)", hex: "#1E40AF" }, ...PALETA_COMPLETA]
                 : PALETA_COMPLETA;
 
               return {
                 id: idx + 1,
-                categoria: (f.Categoria || "General").trim(),
+                categoria: obtenerCampo(f, ["Categoria", "Categoría"]) || "General",
                 titulo: titulo,
-                precio: (f.Precio || "").trim(),
-                medidas: (f.Medidas || "").trim(),
-                descripcion: (f.Descripcion || "").trim(),
+                precio: obtenerCampo(f, ["Precio"]),
+                medidas: obtenerCampo(f, ["Medidas", "Medida", "Tamaño", "Tamano"]),
+                descripcion: obtenerCampo(f, ["Descripcion", "Descripción"]),
                 imagenes: imgs.length > 0 ? imgs : ["1794865057270.jpg"],
                 colores: coloresBase
               };
@@ -216,14 +256,14 @@
       const barra = document.getElementById("barra-categorias");
       const unicas = [...new Set(PRODUCTOS.map(p => p.categoria))];
       barra.innerHTML = `
-        <button onclick="filtrarCategoria('Todos')" class="cat-btn active bg-stone-800 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
+        <button onclick="filtrarCategoria('Todos')" class="cat-btn active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition">
           Todos
         </button>
       `;
       unicas.forEach(cat => {
         const btn = document.createElement("button");
         btn.onclick = () => filtrarCategoria(cat);
-        btn.className = "cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition";
+        btn.className = "cat-btn bg-white text-slate-700 border border-slate-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition";
         btn.textContent = cat;
         barra.appendChild(btn);
       });
@@ -240,19 +280,24 @@
       lista.forEach(prod => {
         const card = document.createElement("div");
         card.onclick = () => abrirModal(prod);
-        card.className = "bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200/80 flex flex-col cursor-pointer active:scale-[0.98] transition";
+        card.className = "bg-white rounded-2xl overflow-hidden shadow-xs border border-slate-200/80 flex flex-col cursor-pointer active:scale-[0.98] transition";
+
+        const badgeMedidas = prod.medidas
+          ? `<span class="inline-block text-[10px] font-semibold text-sky-800 bg-sky-50 border border-sky-200/70 px-1.5 py-0.5 rounded mt-1">📏 ${prod.medidas}</span>`
+          : "";
 
         card.innerHTML = `
-          <div class="aspect-square w-full bg-stone-100 overflow-hidden">
+          <div class="aspect-square w-full bg-slate-100 overflow-hidden">
             <img src="${prod.imagenes[0]}" alt="${prod.titulo}" class="w-full h-full object-cover" />
           </div>
           <div class="p-3 flex-1 flex flex-col justify-between">
             <div>
-              <span class="text-[10px] font-bold uppercase text-amber-700">${prod.categoria}</span>
-              <h3 class="text-xs font-bold text-stone-800 line-clamp-2 mt-0.5 leading-snug">${prod.titulo}</h3>
+              <span class="text-[10px] font-bold uppercase text-indigo-600">${prod.categoria}</span>
+              <h3 class="text-xs font-bold text-slate-800 line-clamp-2 mt-0.5 leading-snug">${prod.titulo}</h3>
+              ${badgeMedidas}
             </div>
             <div class="mt-2.5">
-              <p class="text-base font-extrabold text-stone-900">${prod.precio}</p>
+              <p class="text-base font-extrabold text-slate-900">${prod.precio}</p>
               <p class="text-[11px] text-emerald-600 font-semibold mt-0.5">Varios colores · Ver más</p>
             </div>
           </div>
@@ -264,9 +309,9 @@
     function filtrarCategoria(cat) {
       document.querySelectorAll(".cat-btn").forEach(btn => {
         if (btn.textContent.trim() === cat) {
-          btn.className = "cat-btn active bg-stone-800 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition";
+          btn.className = "cat-btn active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm transition";
         } else {
-          btn.className = "cat-btn bg-white text-stone-700 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition";
+          btn.className = "cat-btn bg-white text-slate-700 border border-slate-200 text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition";
         }
       });
       renderProductos(cat);
@@ -282,17 +327,25 @@
       document.getElementById("modal-precio").textContent = prod.precio;
       document.getElementById("modal-desc").textContent = prod.descripcion;
 
+      const badgeModal = document.getElementById("modal-medidas-badge");
+      if (prod.medidas) {
+        badgeModal.textContent = `📏 ${prod.medidas}`;
+        badgeModal.classList.remove("hidden");
+      } else {
+        badgeModal.classList.add("hidden");
+      }
+
       const thumbs = document.getElementById("modal-thumbs");
       thumbs.innerHTML = "";
       if (prod.imagenes.length > 1) {
         prod.imagenes.forEach((imgUrl, idx) => {
           const t = document.createElement("img");
           t.src = imgUrl;
-          t.className = "w-14 h-14 rounded-xl object-cover border-2 cursor-pointer " + (idx === 0 ? "border-amber-500" : "border-stone-200");
+          t.className = "w-14 h-14 rounded-xl object-cover border-2 cursor-pointer " + (idx === 0 ? "border-indigo-500" : "border-slate-200");
           t.onclick = () => {
             document.getElementById("modal-img").src = imgUrl;
-            Array.from(thumbs.children).forEach(el => el.classList.replace("border-amber-500", "border-stone-200"));
-            t.classList.replace("border-stone-200", "border-amber-500");
+            Array.from(thumbs.children).forEach(el => el.classList.replace("border-indigo-500", "border-slate-200"));
+            t.classList.replace("border-slate-200", "border-indigo-500");
           };
           thumbs.appendChild(t);
         });
@@ -321,7 +374,7 @@
           actualizarLinkWhatsApp();
         };
         btn.className = `flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition ${
-          activo ? "border-amber-600 bg-amber-50 text-amber-900 ring-1 ring-amber-500" : "border-stone-200 bg-white text-stone-700"
+          activo ? "border-indigo-600 bg-indigo-50 text-indigo-950 ring-1 ring-indigo-500" : "border-slate-200 bg-white text-slate-700"
         }`;
 
         const circuloStyle = c.hex.startsWith("linear")
@@ -329,7 +382,7 @@
           : `background-color: ${c.hex};`;
 
         btn.innerHTML = `
-          <span class="w-3.5 h-3.5 rounded-full inline-block ${c.borde ? 'border border-stone-300' : ''}" style="${circuloStyle}"></span>
+          <span class="w-3.5 h-3.5 rounded-full inline-block ${c.borde ? 'border border-slate-300' : ''}" style="${circuloStyle}"></span>
           <span>${c.nombre}</span>
         `;
         cont.appendChild(btn);
@@ -337,7 +390,8 @@
     }
 
     function actualizarLinkWhatsApp() {
-      const texto = `Hola Ninuski 3d! Me interesa encargar:\n• *Producto:* ${productoActual.titulo}\n• *Precio:* ${productoActual.precio}\n• *Color:* ${colorActual}`;
+      const detalleMedida = productoActual.medidas ? `\n• *Medidas:* ${productoActual.medidas}` : "";
+      const texto = `Hola Ninuski 3d! Me interesa encargar:\n• *Producto:* ${productoActual.titulo}${detalleMedida}\n• *Precio:* ${productoActual.precio}\n• *Color:* ${colorActual}`;
       const url = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(texto)}`;
       document.getElementById("btn-whatsapp-pedido").href = url;
     }
